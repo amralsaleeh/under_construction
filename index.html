@@ -1,159 +1,245 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحت الإنشاء - موقع اللياقة البدنية</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOON! - قريباً</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Noto Kufi Arabic', sans-serif;
+      }
 
-        body {
-            min-height: 100vh;
-            background-color: #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
+      body {
+        background: #111;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
 
-        .container {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            max-width: 42rem;
-            width: 100%;
-            text-align: center;
-        }
+      .logo-container {
+        width: 150px;
+        height: 150px;
+        background: #f4bd24;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        animation: pulse 2s infinite;
+        position: relative;
+      }
 
-        .construction-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 2rem;
-            animation: bounce 2s infinite;
-        }
+      .logo-text {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111;
+      }
 
-        .title {
-            color: #f4bd24;
-            font-size: 2.25rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        padding: 2rem;
+      }
 
-        .description {
-            color: #4b5563;
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #f4bd24;
+        font-weight: 800;
+      }
 
-        .icons-container {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
 
-        .icon-box {
-            text-align: center;
-        }
+      .progress-container {
+        width: 80%;
+        max-width: 600px;
+        background: #333;
+        height: 30px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+      }
 
-        .icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 0.5rem;
-            fill: #f4bd24;
-        }
+      .progress-bar {
+        width: 0%;
+        height: 100%;
+        background: #f4bd24;
+        transition: width 0.5s ease;
+      }
 
-        .icon-text {
-            color: #4b5563;
-        }
+      .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #111;
+        font-weight: 700;
+      }
 
-        .progress-bar {
-            width: 100%;
-            height: 1rem;
-            background-color: #e5e7eb;
-            border-radius: 9999px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
+      .decorative-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
 
-        .progress {
-            height: 100%;
-            width: 70%;
-            background-color: #f4bd24;
-            border-radius: 9999px;
-            animation: pulse 2s infinite;
-        }
+      .exercise-icon {
+        position: absolute;
+        color: #f4bd24;
+        opacity: 0.1;
+        font-size: 2rem;
+      }
 
-        .footer-text {
-            color: #6b7280;
-            font-size: 0.875rem;
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(244, 189, 36, 0.7);
         }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 20px rgba(244, 189, 36, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(244, 189, 36, 0);
+        }
+      }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+      .countdown {
+        font-size: 1.5rem;
+        color: #f4bd24;
+        margin-top: 2rem;
+        font-weight: 600;
+      }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+      @media (max-width: 768px) {
+        .logo-container {
+          width: 150px;
+          height: 150px;
         }
+        .logo-text {
+          font-size: 1.8rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <!-- أيقونة البناء -->
-        <svg class="construction-icon" viewBox="0 0 24 24" fill="none" stroke="#f4bd24" stroke-width="2">
-            <path d="M2 20h20M5 20V8h2m10 12V8h2m-8 12v-4h2m8-4V4h2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+  </head>
+  <body>
+    <div class="decorative-elements" id="decorative-elements"></div>
 
-        <h1 class="title">الموقع تحت الإنشاء</h1>
-        <p class="description">نعمل على بناء منصة رياضية متكاملة لمساعدتك في رحلة لياقتك البدنية</p>
+    <div class="logo-container">
+      <img src="Logo.png" alt="logo" width="150" />
+    </div>
 
-        <div class="icons-container">
-            <!-- أيقونة الدمبل -->
-            <div class="icon-box">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#f4bd24" stroke-width="2">
-                    <path d="M6 4v16m12-16v16M12 4v16m-2-8h4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p class="icon-text">تمارين قوة</p>
-            </div>
+    <div class="content">
+      <h1>المنصة الجديدة قيد الإنشاء</h1>
+      <p>أعمل بجد لأقدم منصة تدريبية رياضية فريدة من نوعها</p>
 
-            <!-- أيقونة المؤقت -->
-            <div class="icon-box">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#f4bd24" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p class="icon-text">تمارين كارديو</p>
-            </div>
-        </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="percentage" id="percentage">0%</div>
+      </div>
 
-        <div class="progress-bar">
-            <div class="progress"></div>
-        </div>
-
-        <p class="footer-text">
-            ترقبوا انطلاقنا قريباً مع مجموعة متكاملة من البرامج التدريبية والنصائح الغذائية
-        </p>
+      <div class="countdown" id="countdown"></div>
     </div>
 
     <script>
-        // يمكن إضافة أي تفاعلات JavaScript هنا
-        document.addEventListener('DOMContentLoaded', function() {
-            // مثال: تحديث شريط التقدم
-            const progress = document.querySelector('.progress');
-            setInterval(() => {
-                const currentWidth = parseFloat(progress.style.width) || 70;
-                progress.style.width = `${currentWidth + (Math.random() * 2 - 1)}%`;
-            }, 2000);
-        });
+      // إنشاء العناصر الزخرفية
+      const decorativeIcons = ['🏃', '💪', '🏋️', '🚴', '⚡'];
+      const decorativeContainer = document.getElementById('decorative-elements');
+
+      for (let i = 0; i < 20; i++) {
+        const icon = document.createElement('div');
+        icon.className = 'exercise-icon';
+        icon.textContent = decorativeIcons[Math.floor(Math.random() * decorativeIcons.length)];
+        icon.style.left = Math.random() * 100 + '%';
+        icon.style.top = Math.random() * 100 + '%';
+        decorativeContainer.appendChild(icon);
+      }
+
+      // حساب التقدم والعد التنازلي
+      const targetDate = new Date('2025-06-01').getTime();
+      const startDate = new Date('2025-01-01').getTime();
+
+      function updateProgress() {
+        const now = new Date().getTime();
+        const totalDuration = targetDate - startDate;
+        const elapsed = now - startDate;
+        let progress = (elapsed / totalDuration) * 100;
+
+        if (progress > 100) progress = 100;
+        if (progress < 0) progress = 0;
+
+        document.getElementById('progress-bar').style.width = progress + '%';
+        document.getElementById('percentage').textContent = Math.round(progress) + '%';
+
+        const timeLeft = targetDate - now;
+
+        if (timeLeft > 0) {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById(
+            'countdown'
+          ).textContent = `الإنطلاق خلال: ${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
+        } else {
+          document.getElementById('countdown').textContent = 'تم الإنطلاق!';
+        }
+      }
+
+      setInterval(updateProgress, 1000);
+      updateProgress();
+
+      // تحريك العناصر الزخرفية
+      const icons = document.querySelectorAll('.exercise-icon');
+      icons.forEach(icon => {
+        let posX = parseFloat(icon.style.left);
+        let posY = parseFloat(icon.style.top);
+        let speedX = (Math.random() - 0.5) * 0.1;
+        let speedY = (Math.random() - 0.5) * 0.1;
+
+        setInterval(() => {
+          posX += speedX;
+          posY += speedY;
+
+          if (posX > 100) posX = 0;
+          if (posX < 0) posX = 100;
+          if (posY > 100) posY = 0;
+          if (posY < 0) posY = 100;
+
+          icon.style.left = posX + '%';
+          icon.style.top = posY + '%';
+        }, 50);
+      });
     </script>
-</body>
+  </body>
 </html>
